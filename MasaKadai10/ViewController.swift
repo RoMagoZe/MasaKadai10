@@ -11,10 +11,6 @@ class ViewController: UIViewController, UITableViewDataSource {
 
     private let prefetures = Prefectures()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 47
     }
