@@ -17,17 +17,17 @@ class ViewController: UIViewController, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        var identifier = ""
+        let identifier: String
 
-        switch indexPath.row {
-        case 0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45:
+        switch indexPath.row % 3 {
+        case 0:
             identifier = "Cell1"
-        case 1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31, 34, 37, 40, 43, 46:
+        case 1:
             identifier = "Cell2"
-        case 2, 5, 8, 11, 14, 17, 20, 23, 26, 29, 32, 35, 38, 41, 44:
+        case 2:
             identifier = "Cell3"
         default:
-            assertionFailure("invalid")
+            fatalError("invalid")
         }
 
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
